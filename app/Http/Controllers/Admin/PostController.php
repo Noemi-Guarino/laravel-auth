@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+// models
+use App\Models\Post;
+
 
 class PostController extends Controller
 {
@@ -15,7 +18,17 @@ class PostController extends Controller
     {
         $posts = Post::all();
 
-        return view('');
+        return view('admin.posts.index', compact('posts'));
+    }
+
+        /**
+     * Display the specified resource.
+     */
+    public function show(string $slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -34,13 +47,6 @@ class PostController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Post $post)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
