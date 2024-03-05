@@ -7,11 +7,11 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="text-center text-success">
+                    <h1 class="text-center text-success mb-3">
                         Sei loggato!
                     </h1>
                     <div>
-                        <table class="table">
+                        <table class="table p-4">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
