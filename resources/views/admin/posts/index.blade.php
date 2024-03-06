@@ -5,11 +5,16 @@
 @section('main-content')
     <div class="row">
         <div class="col">
+            <h1 class="text-center text-success mb-3">
+                Sei loggato!
+            </h1>
+            <div class="m-4">
+                <a href="{{ route('admin.posts.create') }}" class="btn btn-xs btn-primary">
+                    add new post
+                </a>
+            </div>
             <div class="card">
                 <div class="card-body">
-                    <h1 class="text-center text-success mb-3">
-                        Sei loggato!
-                    </h1>
                     <div>
                         <table class="table p-4">
                             <thead>

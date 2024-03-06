@@ -44,7 +44,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validationResult = $request->validate([
+
+        ]);
     }
 
 
