@@ -5,7 +5,7 @@
 @section('main-content')
 <div class="my_container">
     <h1>
-        Post Create
+        Post edit
     </h1>
 
     <div class="row">
@@ -26,27 +26,29 @@
             </div>
             @endif
             
-            <form action="{{ route('admin.posts.store') }}" method="POST">
+            <form action="{{ route('admin.posts.update', ['post' => $post->slug ]) }}" method="POST">
                 @csrf
+
+                @method('PUT')
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="enter the title..." maxlength="64" required value="{{ old ('title')}}">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="enter the title..." maxlength="64" required value="{{ old ('title', $post->title ) }}">
                 </div>
 
                 <div class="mb-3">
                     <label for="slug" class="form-label">slug</label>
-                    <textarea class="form-control" id="slug" name="slug" rows="3" placeholder="enter the slug..."></textarea value="{{ old ('slug')}}">
+                    <textarea class="form-control" id="slug" name="slug" rows="3" placeholder="enter the slug..."></textarea value="{{ old ('title',$post->slug )}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="content" class="form-label">content</label>
-                    <textarea class="form-control" id="content" name="content" rows="3" placeholder="enter the content..."></textarea value="{{ old ('content')}}">
+                    <textarea class="form-control" id="content" name="content" rows="3" placeholder="enter the content..."></textarea value="{{ old ('title',$post->content)}}">
                 </div>
 
                 <div>
                     <button type="submit" class="btn btn-success w-100">
-                            Add
+                        update
                     </button>
                 </div>
             </div>
