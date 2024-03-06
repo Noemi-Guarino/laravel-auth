@@ -28,7 +28,7 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)->firstOrFail();
 
-        return view('admin.posts.show', compact('post'));
+        return view('admin.posts.show', compact('posts'));
     }
 
     /**
@@ -36,7 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
