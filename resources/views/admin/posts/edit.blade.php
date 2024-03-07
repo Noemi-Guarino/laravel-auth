@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Crea il tuo post')
+@section('page-title', 'Modifica il tuo post')
 
 @section('main-content')
 <div class="my_container">

@@ -47,7 +47,7 @@
             <input type="password" id="password_confirmation" name="password_confirmation">
         </div>
 
-        <div>
+        <div class="mt-4">
             <a href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
